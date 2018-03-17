@@ -51,6 +51,7 @@ def index():
         if user is None:
             user = User(username=form.name.data)
             db.session.add(user)
+            db.session.commit()
             session['known'] = False
         else:
             session['known'] = True
